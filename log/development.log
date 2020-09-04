@@ -2526,3 +2526,103 @@ Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.0ms | Allocations: 480
 
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/users/new" for ::1 at 2020-09-04 10:24:57 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 619)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 56ms (Views: 31.2ms | ActiveRecord: 0.0ms | Allocations: 8351)
+
+
+Started POST "/users" for ::1 at 2020-09-04 10:25:12 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"5IznxQN//4528HEIzaFAcXAc/NDMt3fP6uK5Hs3H+y2JqJroARD8SerV7xzaoC7jTVkniVibLAWRft8No+2XrA==", "user"=>{"username"=>"sercan", "email"=>"sercan@email.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "sercan"], ["email", "sercan@email.com"], ["password", "pass"], ["created_at", "2020-09-04 09:25:12.626231"], ["updated_at", "2020-09-04 09:25:12.626231"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 22ms (ActiveRecord: 3.7ms | Allocations: 2778)
+
+
+Started GET "/users/new" for ::1 at 2020-09-04 10:25:12 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 555)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 4811)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/users/1/edit" for ::1 at 2020-09-04 10:32:02 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1021)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1806)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @user do |f| %>
+    2:   <%= label(:user, :username, 'Username: ') %>
+    3:   <%= f.text_field :username %>
+    4:   <%= label(:user, :email, 'E-mail: ') %>
+  
+app/views/users/edit.html.erb:1
+Started GET "/users/1/edit" for ::1 at 2020-09-04 10:32:40 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.0ms | Allocations: 813)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 1491)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @user do |f| %>
+    2:   <%= label(:user, :username, 'Username: ') %>
+    3:   <%= f.text_field :username %>
+    4:   <%= label(:user, :email, 'E-mail: ') %>
+  
+app/views/users/edit.html.erb:1
+Started GET "/users/1/edit" for ::1 at 2020-09-04 10:33:23 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 25.9ms | Allocations: 686)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 50.1ms | ActiveRecord: 0.7ms | Allocations: 9753)
+
+
+Started GET "/users/2/edit" for ::1 at 2020-09-04 10:33:30 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 600)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.2ms | Allocations: 5373)
+
+
+Started GET "/users/3/edit" for ::1 at 2020-09-04 10:33:33 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 600)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.3ms | Allocations: 5362)
+
+
