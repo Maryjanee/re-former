@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    # redirect_to action: 'new'
+    redirect_to action: 'new'
   end
 
   private
