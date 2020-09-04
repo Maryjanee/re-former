@@ -11,7 +11,10 @@ class UsersController < ApplicationController
     else
       render :new
     end
-    
+  end
+
+  def update
+    @user = User.update(user_params)
   end
 
   private
